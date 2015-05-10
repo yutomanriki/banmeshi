@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-    user = User.create(name: params[:name])
+    user = User.create(name: params[:name],order_id: params[:order_id])
     redirect_to user
   end
 
