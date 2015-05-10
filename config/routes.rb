@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get "/orders" => "orders#index"
+  resources :orders
   root to: 'application#index'
 end
