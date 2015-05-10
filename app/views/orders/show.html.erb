@@ -4,5 +4,10 @@
   <p>name<br>
   <input type="text" name="name"></p>
   <input type="submit" name="commit" value="参加する!!" class="btn btn-danger">
-  <input type="hiddne" name="order_id" value="<%= @order.id %>">
+  <input type="hidden" name="order_id" value="<%= @order.id %>">
+
 </form>
+<p>現在の参加者</p>
+  <% @order.users.each do |user| %>
+    <p><%= user.name %> </p>
+    <% end %>
