@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Banmeshi
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    = analytics_init if Rails.env.production?
+
+  %body{ class: "#{controller_path.gsub(/\//, '_')}_controller #{action_name}_action" }
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          = link_to root_url, class: 'navbar-brand' do
+            晩飯
+
+    .container
+      = yield
